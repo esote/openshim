@@ -26,13 +26,13 @@ package openshim
 //	}
 import "C"
 
-// Pledge syscall, error is errno value
+// Deprecated: Pledge syscall, error is errno value
 func Pledge(promises, execpromises string) (int, error) {
 	i, err := C.shim_pledge(C.CString(promises), C.CString(execpromises))
 	return int(i), err
 }
 
-// Unveil syscall, error is errno value
+// Deprecated: Unveil syscall, error is errno value
 func Unveil(path, permissions string) (int, error) {
 	i, err := C.shim_unveil(C.CString(path), C.CString(permissions))
 	return int(i), err

@@ -1,1 +1,7 @@
-openshim is a shim for OpenBSD pledge and unveil syscalls using cgo.
+DEPRECATED
+
+openshim was a shim for OpenBSD pledge and unveil syscalls using cgo. Now that
+the golang.org/x/sys/unix package supports unveil it is no longer useful.
+
+If you want it to run on both OpenBSD and non-OpenBSD systems just use build
+constraints to have calls on non-OpenBSD systems be a no-op.
